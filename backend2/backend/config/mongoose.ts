@@ -1,12 +1,9 @@
-import env from "./env"
 import mongoose from "mongoose";
-
-export const connectDB = async()=>{
+import env from "./env"
+export  const connectDb = async()=>{
     try {
-        await mongoose.connect(env.MONGO_URL as string,{
-            serverApi:`1`
-        })
-        console.log(`basarili`)
+        mongoose.connect(env.MONGODB as string)
+        console.log(`database connected`)
     } catch (error) {
         console.log(error)
         
